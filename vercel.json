@@ -3,5 +3,6 @@
     { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/book", "destination": "/book.html" }
+    { "source": "/reviews", "destination": "/reviews.html" }
   ]
 }
