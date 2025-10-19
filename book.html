@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Us - Wild Heaven Beach Villa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Wild Heaven Beach Villa</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="menu">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/book" class="active">Book Us</a>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h1>Book Your Stay</h1>
+    <p>Please fill in the details below and check availability via WhatsApp.</p>
+
+    <form id="booking-form" class="contact-form">
+      <label for="room">Choose Room:</label>
+      <select id="room" required>
+        <option value="">--Select Room--</option>
+        <option value="Superior King Room">Superior King Room - $69.82 / night</option>
+        <option value="Deluxe Family Room">Deluxe Family Room - $89.77 / night</option>
+      </select>
+
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" placeholder="Enter number of guests" min="1" required>
+
+      <label for="checkin">Check-in Date:</label>
+      <input type="date" id="checkin" required>
+
+      <label for="checkout">Check-out Date:</label>
+      <input type="date" id="checkout" required>
+
+      <button type="submit">Check Availability</button>
+    </form>
+
+    <div id="room-details" class="content"></div>
+  </section>
+
+  <footer>
+    © 2023–2025 Wild Heaven Beach Villa | All Rights Reserved
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
