@@ -7,61 +7,87 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-  <div class="logo-container">
-    <img src="images/logo.jpg" alt="Wild Heaven Beach Villa Logo" class="logo-img">
-  </div>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="menu">
-    <a href="/">Home</a>
-    <a href="/about">About Us</a>
-    <a href="/contact">Contact Us</a>
-    <a href="/book">Book Us</a>
-    <a href="/reviews">Reviews</a>
-  </nav>
-</header>
 
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.jpg" alt="Wild Heaven Beach Villa Logo" class="logo-img">
+    </div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="menu">
+      <a href="/" class="active">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/book">Book Us</a>
+      <a href="/reviews">Reviews</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Welcome to Wild Heaven Beach Villa</h1>
-    <p>Experience paradise by the ocean — where comfort meets nature.</p>
-    <a href="/about" class="btn">Discover More</a>
+    <p>Experience the perfect beach getaway with luxury and comfort.</p>
+    <a href="/book" class="btn">Book Now</a>
   </section>
 
-  <!-- Nearby Attractions Section -->
+  <!-- Nearby Attractions -->
   <section class="nearby">
     <h2>Nearby Attractions</h2>
     <div class="attractions">
       <div class="attraction">
-        <img src="images/gfort.jpg" alt="Galle Dutch Fort">
+        <img src="images/galle-fort.jpg" alt="Galle Dutch Fort">
         <p>Galle Dutch Fort</p>
       </div>
       <div class="attraction">
-        <img src="images/una.jpg" alt="Unawatuna Beach">
+        <img src="images/unawatuna.jpg" alt="Unawatuna Beach">
         <p>Unawatuna</p>
       </div>
       <div class="attraction">
-        <img src="images/ruma.jpg" alt="Rumassala">
+        <img src="images/rumassala.jpg" alt="Rumassala">
         <p>Rumassala</p>
       </div>
       <div class="attraction">
-        <img src="images/jung.jpg" alt="Jungle Beach">
+        <img src="images/jungle-beach.jpg" alt="Jungle Beach">
         <p>Jungle Beach</p>
       </div>
       <div class="attraction">
-        <img src="images/natio.jpg" alt="National Maritime Museum">
+        <img src="images/maritime-museum.jpg" alt="National Maritime Museum">
         <p>National Maritime Museum</p>
       </div>
       <div class="attraction">
-        <img src="images/lake.jpg" alt="Koggala Lake">
+        <img src="images/koggala-lake.jpg" alt="Koggala Lake">
         <p>Koggala Lake</p>
       </div>
     </div>
   </section>
 
+  <!-- Location Section -->
+  <section class="location">
+    <h2>Our Location</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.5108511692867!2d80.20639511430873!3d6.031654924476348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae179f4c991b081%3A0xa7f4b07a9e7e6e2b!2sWild%20Heaven%20Beach%20Villa!5e0!3m2!1sen!2slk!4v1708693786112!5m2!1sen!2slk" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 Wild Heaven Beach Villa | All Rights Reserved
+    © 2023–2025 Wild Heaven Beach Villa | All Rights Reserved
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Hamburger menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('show'));
+  </script>
 </body>
 </html>
