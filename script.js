@@ -36,7 +36,7 @@ if (bookingForm) {
     const message = encodeURIComponent(
       `Room: ${room}\nNumber of Guests: ${guests}\nCheck-in: ${checkin}\nCheck-out: ${checkout}`
     );
-    window.location.href = `https://wa.me/94710695082?text=${message}`;
+    window.location.href = `https://wa.me/+94710680196?text=${message}`;
   });
 }
 
@@ -53,7 +53,7 @@ if (contactForm) {
     if (name && email && message) {
       const subject = encodeURIComponent(`New message from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:wildheavenbeach@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:admin@wildheavenbeach.xyz?subject=${subject}&body=${body}`;
     }
   });
 }
