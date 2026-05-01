@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Heaven Beach Villa | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .fade-in { animation: fadeIn 1s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-teal-700 tracking-wider">WILD HEAVEN</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="about/index.html" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <a href="photos/index.html" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium">Rooms & Photos</a>
+                    <a href="contact/index.html" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    <a href="book/index.html" class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition shadow-lg">Book Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-teal-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="index.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="about/index.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">About</a>
+            <a href="photos/index.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Rooms & Photos</a>
+            <a href="contact/index.html" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="book/index.html" class="block px-4 py-2 text-base font-medium text-teal-600 font-bold hover:bg-gray-100">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">Wild Heaven Beach Villa</h1>
+            <p class="text-xl md:text-2xl text-gray-100 mb-8 font-light drop-shadow-md">Experience Luxury & Serenity by the Ocean</p>
+            <a href="book/index.html" class="inline-block bg-white text-teal-800 font-bold py-3 px-8 rounded-full hover:bg-teal-50 transition transform hover:scale-105 shadow-xl">Check Availability</a>
+        </div>
+    </header>
+
+    <!-- Villa Details -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Welcome to Paradise</h2>
+            <div class="w-24 h-1 bg-teal-500 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Nestled along the pristine coastline, Wild Heaven Beach Villa offers an exclusive retreat for travelers seeking comfort, luxury, and breathtaking ocean views. Whether you are a couple looking for a romantic getaway or a family wanting a memorable vacation, our villa provides the perfect ambiance.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-gray-700"><i class="fas fa-water text-teal-500 w-8"></i> Direct Beach Access</li>
+                    <li class="flex items-center text-gray-700"><i class="fas fa-wifi text-teal-500 w-8"></i> High-Speed Wi-Fi</li>
+                    <li class="flex items-center text-gray-700"><i class="fas fa-utensils text-teal-500 w-8"></i> Authentic Local Cuisine</li>
+                    <li class="flex items-center text-gray-700"><i class="fas fa-swimming-pool text-teal-500 w-8"></i> Private Pool Area</li>
+                </ul>
+            </div>
+            <div class="relative h-96 rounded-2xl overflow-hidden shadow-2xl group">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Villa Interior" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearby Attractions -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Explore Nearby</h2>
+                <p class="text-gray-600">Discover the beauty of Galle and its surroundings</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Attraction 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="images/dutch.jpg" onerror="this.src='https://images.unsplash.com/photo-1588258524675-c61d56fb45b6?auto=format&fit=crop&w=800&q=80'" alt="Galle Dutch Fort" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Galle Dutch Fort</h3>
+                        <p class="text-gray-600 text-sm">A UNESCO World Heritage site featuring historic architecture and vibrant streets.</p>
+                    </div>
+                </div>
+                <!-- Attraction 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="images/unawatuna.jpg" onerror="this.src='https://images.unsplash.com/photo-1589309736404-2e142a2acdf9?auto=format&fit=crop&w=800&q=80'" alt="Unawatuna" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Unawatuna Beach</h3>
+                        <p class="text-gray-600 text-sm">One of the most beautiful beaches in Sri Lanka, perfect for swimming and snorkeling.</p>
+                    </div>
+                </div>
+                <!-- Attraction 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="images/rumassala.jpg" onerror="this.src='https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800&q=80'" alt="Rumassala" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Rumassala Hill</h3>
+                        <p class="text-gray-600 text-sm">Known for its diverse flora and fauna and the famous Peace Pagoda.</p>
+                    </div>
+                </div>
+                <!-- Attraction 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="images/jungle.jpg" onerror="this.src='https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80'" alt="Jungle Beach" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Jungle Beach</h3>
+                        <p class="text-gray-600 text-sm">A secluded paradise accessible via a short hike through lush jungle.</p>
+                    </div>
+                </div>
+                <!-- Attraction 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="images/maritime.jpg" onerror="this.src='https://images.unsplash.com/photo-1566371486490-560ded23b5e4?auto=format&fit=crop&w=800&q=80'" alt="Maritime Museum" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">National Maritime Museum</h3>
+                        <p class="text-gray-600 text-sm">Explore the rich naval history of Sri Lanka in this unique museum.</p>
+                    </div>
+                </div>
+                <!-- Attraction 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="images/lake.jpg" onerror="this.src='https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80'" alt="Koggala Lake" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Koggala Lake</h3>
+                        <p class="text-gray-600 text-sm">Enjoy a serene boat ride through the mangroves and visit the spice garden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
+        </div>
+        <div class="w-full h-96 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.456789012345!2d80.216667!3d6.016667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDEnMDAuMCJOIDgwwrAxMycwMC4wIkU!5e0!3m2!1sen!2slk!4v1600000000000!5m2!1sen!2slk" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <p class="text-center mt-4 text-gray-600">Wild Heaven Beach Villa, Unawatuna, Galle, Sri Lanka</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Wild Heaven</h3>
+                <p class="text-gray-400">Your home away from home by the sea.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="about/index.html" class="hover:text-white">About Us</a></li>
+                    <li><a href="photos/index.html" class="hover:text-white">Rooms</a></li>
+                    <li><a href="contact/index.html" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact</h3>
+                <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@wildheavenbeach.xyz</p>
+                <p class="text-gray-400 mt-2"><i class="fab fa-whatsapp mr-2"></i> +94 77 123 4567</p>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+            &copy; 2026 Wild Heaven Beach Villa. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
