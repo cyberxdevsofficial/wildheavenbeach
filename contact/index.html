@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Wild Heaven Beach Villa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-teal-700">WILD HEAVEN</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../index.html" class="text-gray-700 hover:text-teal-600">Home</a>
+                    <a href="../about/index.html" class="text-gray-700 hover:text-teal-600">About</a>
+                    <a href="../photos/index.html" class="text-gray-700 hover:text-teal-600">Rooms</a>
+                    <a href="index.html" class="text-teal-600 font-bold">Contact</a>
+                    <a href="../book/index.html" class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700">Book Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="../index.html" class="block px-4 py-2 text-gray-700">Home</a>
+            <a href="../about/index.html" class="block px-4 py-2 text-gray-700">About</a>
+            <a href="../photos/index.html" class="block px-4 py-2 text-gray-700">Rooms</a>
+            <a href="index.html" class="block px-4 py-2 text-teal-600 font-bold">Contact</a>
+            <a href="../book/index.html" class="block px-4 py-2 text-teal-600 font-bold">Book Now</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-20">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
+                <p class="text-gray-600">We are here to answer any questions you may have about your stay.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center p-6 bg-teal-50 rounded-xl">
+                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4 text-teal-600 text-2xl">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Email Us</h3>
+                        <a href="mailto:info@wildheavenbeach.xyz" class="text-gray-600 hover:text-teal-600">info@wildheavenbeach.xyz</a>
+                    </div>
+
+                    <div class="flex flex-col items-center p-6 bg-green-50 rounded-xl">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600 text-2xl">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">WhatsApp</h3>
+                        <a href="https://wa.me/94771234567" class="text-gray-600 hover:text-green-600">+94 77 123 4567</a>
+                    </div>
+
+                    <div class="flex flex-col items-center p-6 bg-blue-50 rounded-xl md:col-span-2">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-600 text-2xl">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Call Us</h3>
+                        <a href="tel:+94771234567" class="text-gray-600 hover:text-blue-600">+94 77 123 4567</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p>&copy; 2026 Wild Heaven Beach Villa.</p>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
