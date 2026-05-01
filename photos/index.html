@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Photos | Wild Heaven Beach Villa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-teal-700">WILD HEAVEN</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../index.html" class="text-gray-700 hover:text-teal-600">Home</a>
+                    <a href="../about/index.html" class="text-gray-700 hover:text-teal-600">About</a>
+                    <a href="index.html" class="text-teal-600 font-bold">Rooms</a>
+                    <a href="../contact/index.html" class="text-gray-700 hover:text-teal-600">Contact</a>
+                    <a href="../book/index.html" class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900">Our Rooms</h1>
+                <p class="text-gray-600 mt-2">Select a room to view photos</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Double Room Card -->
+                <a href="double-room/index.html" class="group relative h-96 rounded-2xl overflow-hidden shadow-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1590490360182-f33efe80a713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Double Room" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8">
+                        <h2 class="text-3xl font-bold text-white mb-2">Double Room</h2>
+                        <p class="text-gray-200">Perfect for couples. Ocean view, king-size bed, and private balcony.</p>
+                        <span class="mt-4 inline-block text-teal-400 font-bold group-hover:translate-x-2 transition-transform">View Photos <i class="fas fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Family Room Card -->
+                <a href="family-room/index.html" class="group relative h-96 rounded-2xl overflow-hidden shadow-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Family Room" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8">
+                        <h2 class="text-3xl font-bold text-white mb-2">Family Room</h2>
+                        <p class="text-gray-200">Spacious suite for families. Two beds, living area, and garden access.</p>
+                        <span class="mt-4 inline-block text-teal-400 font-bold group-hover:translate-x-2 transition-transform">View Photos <i class="fas fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p>&copy; 2026 Wild Heaven Beach Villa.</p>
+    </footer>
+</body>
+</html>
