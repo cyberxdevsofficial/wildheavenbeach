@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Wild Heaven Beach Villa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .loader { border-top-color: #0d9488; -webkit-animation: spinner 1.5s linear infinite; animation: spinner 1.5s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-teal-700">WILD HEAVEN</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../index.html" class="text-gray-700 hover:text-teal-600">Home</a>
+                    <a href="../about/index.html" class="text-gray-700 hover:text-teal-600">About</a>
+                    <a href="../photos/index.html" class="text-gray-700 hover:text-teal-600">Rooms</a>
+                    <a href="../contact/index.html" class="text-gray-700 hover:text-teal-600">Contact</a>
+                    <a href="index.html" class="bg-teal-600 text-white px-5 py-2 rounded-full">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-12">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-bold text-gray-900">Reserve Your Paradise</h1>
+                <p class="text-gray-600 mt-2">Check availability and book your room instantly.</p>
+            </div>
+
+            <!-- Step 1: Check Availability -->
+            <div id="step-1" class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-teal-700">Step 1: Check Availability</h2>
+                <form id="availability-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
+                        <input type="date" id="checkin" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
+                        <input type="date" id="checkout" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
+                        <input type="number" id="guests" min="1" max="6" value="2" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="w-full bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition shadow-md">
+                            Check Availability
+                        </button>
+                    </div>
+                </form>
+                <div id="availability-result" class="mt-6 hidden p-4 rounded-lg"></div>
+            </div>
+
+            <!-- Step 2: Guest Details (Hidden initially) -->
+            <div id="step-2" class="bg-white rounded-2xl shadow-xl p-8 hidden">
+                <h2 class="text-2xl font-bold mb-6 text-teal-700">Step 2: Guest Details</h2>
+                <div id="selected-room-info" class="mb-6 p-4 bg-teal-50 rounded-lg border border-teal-100">
+                    <!-- Room info injected here -->
+                </div>
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="fullname" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" required class="w-full border-gray-300 rounded-lg shadow-sm focus:border-teal-500 focus:ring-teal-500 p-3 border">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-gray-900 text-white font-bold py-4 px-4 rounded-lg hover:bg-gray-800 transition shadow-lg text-lg">
+                        Confirm Booking
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Loading Overlay -->
+            <div id="loading" class="fixed inset-0 bg-white bg-opacity-80 flex items-center justify-center z-50 hidden">
+                <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p>&copy; 2026 Wild Heaven Beach Villa.</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, query, where, getDocs, Timestamp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAOJHB4YVu7nFuyja-Mi-7muh4AQZLD6CU",
+            authDomain: "wildheavenbeach-a15dd.firebaseapp.com",
+            projectId: "wildheavenbeach-a15dd",
+            storageBucket: "wildheavenbeach-a15dd.firebasestorage.app",
+            messagingSenderId: "994457539395",
+            appId: "1:994457539395:web:8814b08d5e11052f5155f6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // DOM Elements
+        const availForm = document.getElementById('availability-form');
+        const bookingForm = document.getElementById('booking-form');
+        const resultDiv = document.getElementById('availability-result');
+        const step2 = document.getElementById('step-2');
+        const loading = document.getElementById('loading');
+        
+        let selectedRoomType = '';
+        let checkInDate = '';
+        let checkOutDate = '';
+        let guestCount = 0;
+
+        // Helper: Determine Room Type
+        function getRoomType(guests) {
+            if (guests <= 2) return 'Double Room';
+            return 'Family Room';
+        }
+
+        // Check Availability Logic
+        availForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loading.classList.remove('hidden');
+            
+            checkInDate = document.getElementById('checkin').value;
+            checkOutDate = document.getElementById('checkout').value;
+            guestCount = parseInt(document.getElementById('guests').value);
+            selectedRoomType = getRoomType(guestCount);
+
+            try {
+                // Query Firestore for overlapping bookings
+                // Note: This is a simplified check. In production, use complex queries or cloud functions.
+                // We check if any booking exists for this room type where:
+                // existing.checkin < new.checkout AND existing.checkout > new.checkin
+                const q = query(
+                    collection(db, "bookings"), 
+                    where("roomType", "==", selectedRoomType),
+                    where("status", "==", "confirmed")
+                );
+                
+                const querySnapshot = await getDocs(q);
+                let isAvailable = true;
+
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const existingCheckIn = data.checkIn; // Assuming format YYYY-MM-DD
+                    const existingCheckOut = data.checkOut;
+
+                    if (checkInDate < existingCheckOut && checkOutDate > existingCheckIn) {
+                        isAvailable = false;
+                    }
+                });
+
+                resultDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+                
+                if (isAvailable) {
+                    resultDiv.classList.add('bg-green-100', 'text-green-800');
+                    resultDiv.innerHTML = `<strong>Great News!</strong> The ${selectedRoomType} is available for your dates.`;
+                    step2.classList.remove('hidden');
+                    
+                    // Populate Room Info
+                    document.getElementById('selected-room-info').innerHTML = `
+                        <p class="font-bold text-lg">${selectedRoomType}</p>
+                        <p class="text-sm text-gray-600">${checkInDate} to ${checkOutDate} (${guestCount} Guests)</p>
+                    `;
+                    
+                    // Scroll to step 2
+                    step2.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    resultDiv.classList.add('bg-red-100', 'text-red-800');
+                    resultDiv.innerHTML = `<strong>Sorry!</strong> The ${selectedRoomType} is fully booked for these dates. Please try different dates or contact us.`;
+                    step2.classList.add('hidden');
+                }
+
+            } catch (error) {
+                console.error("Error checking availability: ", error);
+                resultDiv.classList.remove('hidden');
+                resultDiv.classList.add('bg-red-100', 'text-red-800');
+                resultDiv.innerHTML = "An error occurred. Please try again.";
+            } finally {
+                loading.classList.add('hidden');
+            }
+        });
+
+        // Submit Booking
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loading.classList.remove('hidden');
+
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+
+            try {
+                await addDoc(collection(db, "bookings"), {
+                    fullName: fullname,
+                    email: email,
+                    phone: phone,
+                    whatsapp: whatsapp,
+                    roomType: selectedRoomType,
+                    guests: guestCount,
+                    checkIn: checkInDate,
+                    checkOut: checkOutDate,
+                    status: 'confirmed',
+                    createdAt: Timestamp.now(),
+                    price: selectedRoomType === 'Double Room' ? 100 : 180 // Example prices in USD
+                });
+
+                alert("Booking Confirmed! We will contact you shortly.");
+                window.location.href = "../index.html";
+
+            } catch (error) {
+                console.error("Error adding booking: ", error);
+                alert("Failed to save booking. Please contact us directly.");
+            } finally {
+                loading.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
