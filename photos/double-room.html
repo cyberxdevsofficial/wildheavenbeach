@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Room Gallery | Wild Heaven Beach Villa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; }
+        h1 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="text-2xl font-bold text-teal-700">WILD HEAVEN</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../../index.html" class="text-gray-700 hover:text-teal-600">Home</a>
+                    <a href="../../photos/index.html" class="text-teal-600 font-bold">Back to Rooms</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-12">Double Room Gallery</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <!-- Images will be loaded here by JS -->
+                <p class="col-span-full text-center text-gray-500">Loading photos...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Since we cannot list directory contents with pure client-side JS without a server,
+        // We will simulate the gallery with placeholder images that represent the folder structure.
+        // In a real scenario, you would manually list the image paths here or use a backend API.
+        
+        const galleryGrid = document.getElementById('gallery-grid');
+        
+        // Simulating files in photos/double-room/ folder
+        // Replace these URLs with your actual relative paths like 'photo1.jpg' if they exist locally
+        const images = [
+            'https://images.unsplash.com/photo-1590490360182-f33efe80a713?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1590490360182-f33efe80a713?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1590490360182-f33efe80a713?auto=format&fit=crop&w=800&q=80'
+        ];
+
+        galleryGrid.innerHTML = ''; // Clear loading text
+
+        images.forEach(src => {
+            const div = document.createElement('div');
+            div.className = 'rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300';
+            div.innerHTML = `<img src="${src}" alt="Double Room Photo" class="w-full h-64 object-cover hover:scale-105 transition duration-500">`;
+            galleryGrid.appendChild(div);
+        });
+    </script>
+</body>
+</html>
