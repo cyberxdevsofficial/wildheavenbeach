@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Bookings | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <span class="font-bold text-xl">WHBV Admin</span>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="dashboard.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="booking.html" class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium">Bookings</a>
+                        <a href="manage.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Manage Rooms</a>
+                        <a href="availability.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Availability</a>
+                        <a href="#" onclick="logout()" class="text-red-400 hover:text-red-300 px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-10 px-4">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">All Bookings</h1>
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Contact</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Room</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Dates</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Guests</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200" id="all-bookings-body">
+                        <tr><td colspan="5" class="px-6 py-4 text-center">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
+        if (!sessionStorage.getItem('isAdmin')) window.location.href = 'index.html';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAOJHB4YVu7nFuyja-Mi-7muh4AQZLD6CU",
+            authDomain: "wildheavenbeach-a15dd.firebaseapp.com",
+            projectId: "wildheavenbeach-a15dd",
+            storageBucket: "wildheavenbeach-a15dd.firebasestorage.app",
+            messagingSenderId: "994457539395",
+            appId: "1:994457539395:web:8814b08d5e11052f5155f6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadBookings() {
+            const querySnapshot = await getDocs(collection(db, "bookings"));
+            let html = '';
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                html += `
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${data.fullName}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <div>${data.email}</div>
+                            <div class="text-xs text-gray-400">${data.phone}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.roomType}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.checkIn} to ${data.checkOut}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.guests}</td>
+                    </tr>
+                `;
+            });
+            document.getElementById('all-bookings-body').innerHTML = html || '<tr><td colspan="5" class="px-6 py-4 text-center">No bookings</td></tr>';
+        }
+
+        loadBookings();
+        window.logout = () => { sessionStorage.removeItem('isAdmin'); window.location.href = 'index.html'; };
+    </script>
+</body>
+</html>
