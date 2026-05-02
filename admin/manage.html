@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Rooms | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-900 text-white p-4">
+        <a href="dashboard.html" class="mr-4">Dashboard</a>
+        <a href="booking.html" class="mr-4">Bookings</a>
+        <span class="font-bold">Manage Rooms</span>
+        <a href="#" onclick="logout()" class="float-right text-red-400">Logout</a>
+    </nav>
+    <main class="max-w-4xl mx-auto py-10 px-4">
+        <h1 class="text-2xl font-bold mb-6">Room Management</h1>
+        <div class="bg-white p-6 rounded shadow">
+            <p class="text-gray-600 mb-4">Current Room Configuration:</p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Double Room:</strong> Max 2 Guests. Base Price: $100/night.</li>
+                <li><strong>Family Room:</strong> Max 6 Guests. Base Price: $180/night.</li>
+            </ul>
+            <p class="mt-4 text-sm text-gray-500">To change prices, update the logic in <code>book/index.html</code> and <code>admin/dashboard.html</code>.</p>
+        </div>
+    </main>
+    <script>
+        if (!sessionStorage.getItem('isAdmin')) window.location.href = 'index.html';
+        window.logout = () => { sessionStorage.removeItem('isAdmin'); window.location.href = 'index.html'; };
+    </script>
+</body>
+</html>
